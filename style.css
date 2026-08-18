@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe6ee 0%, #ffccd5 50%, #ffb3c1 100%);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating Light Pink Lilies & Teddies */
+.background-decorations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lily, .teddy {
+  position: absolute;
+  font-size: 2.8rem;
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.l1 { top: 8%; left: 8%; animation-delay: 0s; }
+.l2 { top: 75%; left: 10%; animation-delay: 1.5s; }
+.l3 { top: 12%; right: 10%; animation-delay: 0.8s; }
+.l4 { top: 72%; right: 12%; animation-delay: 2.2s; }
+
+.t1 { top: 45%; left: 4%; animation-delay: 1s; }
+.t2 { top: 40%; right: 5%; animation-delay: 2.7s; }
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-18px) rotate(12deg); }
+}
+
+/* Main Card Styling */
+.card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25);
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  border: 2px solid #ffccd5;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.center-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #ff4d6d;
+  margin-bottom: 8px;
+}
+
+.question {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 55px;
+  position: relative;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.yes-btn {
+  background-color: #ff4d6d;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 77, 109, 0.4);
+}
+
+.yes-btn:hover {
+  background-color: #ff2a54;
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(255, 77, 109, 0.6);
+}
+
+.no-btn {
+  background-color: #ffb3c1;
+  color: #555;
+  position: absolute;
+  right: 20px;
+  transition: left 0.15s ease, top 0.15s ease;
+  z-index: 99;
+}
+
+/* PAGE 2: Sweet Message Card */
+.message-card {
+  display: none;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sparkles {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.message-heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.2rem;
+  color: #ff4d6d;
+  margin-bottom: 15px;
+}
+
+.message-content p {
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.message-content .highlight {
+  font-weight: 600;
+  color: #ff2a54;
+  font-size: 1.15rem;
+}
+
+.heart-footer {
+  margin-top: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #ff4d6d;
+}
